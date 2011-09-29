@@ -1,18 +1,32 @@
 <?php
-/**
- * @package Watskeburt
- * @version 1.0
- */
 /*
-Plugin Name: Watskeburt [18+]
+Plugin Name: Watskeburt
 Plugin URI: https://github.com/stronk/wordpress-plugin-watskeburt
-Description: Elke keer een andere frase uit deze frisse zomerhit, een fr&ecirc;le bloempje uit het fraaie boeket dat het rijke &oelig;uvre van de Jeugd van Tegenwoordig vormt
+Description: Elke keer een andere frase uit deze frisse zomerhit, een fr&ecirc;le bloempje uit het frisse boeket dat het rijke &oelig;uvre van de Jeugd van Tegenwoordig vormt
+Version: 1.03
 Author: Stronk
-Version: 1.0
 Author URI: http://stronk.net/
+License: GPL2
 
-Copyright: Deze plugin is overigens eh... min of meer losjes gebaseerd op de Hello Dolly-plugin van Matt Mullenweg, http://ma.tt/, die vooralsnog standaard met elke Wordpress wordt meegeleverd.
+
+
+    Copyright 2011  Stronk  (email : koen@stronk.net)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as 
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+
 
 
 
@@ -77,7 +91,7 @@ Baksteen is een baas, Heist Rocker is een baas";
 	// verdeel in regels
 	$rijms = explode( "\n", $rijms );
 
-	// kies zomaar voor de vuist weg
+	// kies er zomaar een voor de vuist weg
 	return wptexturize( $rijms[ mt_rand( 0, count( $rijms ) - 1 ) ] );
 }
 
@@ -87,11 +101,8 @@ function watskeburt() {
 	echo "<p id='watskeburt'>$uitverkoren</p>";
 }
 
-// frisse stijlen om mee te spitten
+// frisse stijlen om te spitten
 function watskeburt_css() {
-	// echt superbelangrijk: zorg vast dat de tekst ook goed leesbaar is als Nederlands een RTL-taal wordt
-	$x = is_rtl() ? 'left' : 'right';
-
 	echo "
 	<style type='text/css'>
 	#watskeburt {
